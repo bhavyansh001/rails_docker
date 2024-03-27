@@ -1,24 +1,12 @@
-# README
+# Files Modified
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* dev.dockerfile
+* bin/docker-dev-entrypoint
+* database.yml
+* dev.sh `chmod +x`
 
-Things you may want to cover:
+# Commands Run
 
-* Ruby version
+* docker build -f dev.dockerfile -t project .
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* docker run -p 3000:3000 -v $(pwd):/rails project
