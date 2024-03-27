@@ -1,0 +1,11 @@
+#!/bin/bash 
+set -e
+
+# If running the rails server then create or migrate existing database
+if [ "$RAILS_ENV" = "development" ]; then
+  echo "Preparing Database"
+  bundle exec rails db:prepare
+  ./bin/rails db:prepare
+fi
+
+exec "${@}"
